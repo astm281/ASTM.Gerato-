@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolce Gelato - เมนูไอศกรีม</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fdf2f4; 
+            color: #333; 
+        }
+        header { 
+            background-color: #ffb6c1; 
+            color: #fff; 
+            text-align: center; 
+            padding: 25px 0; 
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 2.2em; 
+        }
+        nav { 
+            background-color: #ff8fa3; 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            padding: 10px 0; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 15px; 
+            margin: 2px 5px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+            transition: background 0.3s; 
+        }
+        nav a:hover, nav a.active-link { 
+            background-color: #e6738c; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 30px auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+        }
+        h2 { 
+            color: #ff6b8b; 
+            border-bottom: 2px solid #ffe5ec; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        
+        /* สไตล์สำหรับการ์ดเมนู */
+        .menu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .menu-card {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #fce4ec;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .menu-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 143, 163, 0.15);
+        }
+        .menu-card img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 25px;
+            border: 4px solid #fff5f8;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+        .menu-info h3 {
+            margin: 0 0 8px 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .menu-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* Responsive สำหรับมือถือ */
+        @media (max-width: 600px) {
+            .menu-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .menu-card img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ASTM Gelato Bar</h1>
+        <p>เจลาโต้โฮมเมดพรีเมียม สไตล์อิตาลีแท้ๆ</p>
+    </header>
+
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="menu.html" class="active-link">เมนูไอศกรีม</a>
+        <a href="about.html">เกี่ยวกับเรา</a>
+        <a href="promo.html">โปรโมชั่น</a>
+        <a href="register.html">สมัครสมาชิก</a>
+        <a href="contact.html">ติดต่อเรา</a>
+    </nav>
+
+    <div class="container">
+        <h2>เมนูยอดฮิต</h2>
+        
+        <div class="menu-grid">
+            <!-- เมนูที่ 1 -->
+            <div class="menu-card">
+                <img src="รูปภาพ/chocolatet.jpg" alt="Dark Chocolate Madagascar">
+                <div class="menu-info">
+                    <h3>🍫 Dark Chocolate Madagascar</h3>
+                    <p>ช็อกโกแลตเข้มข้น หวานน้อย สายดาร์กต้องเลิฟ</p>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 2 -->
+            <div class="menu-card">
+                <img src="รูปภาพ/pistachio.jpg" alt="Sicilian Pistachio">
+                <div class="menu-info">
+                    <h3>🥜 Sicilian Pistachio</h3>
+                    <p>พิตาชิโอแท้คั่วหอม กรุบกรับเต็มคำ</p>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 3 -->
+            <div class="menu-card">
+                <img src="รูปภาพ/hokkaido.jpg" alt="Hokkaido Milk">
+                <div class="menu-info">
+                    <h3>🥛 Hokkaido Milk</h3>
+                    <p>นมฮอกไกโดแท้ หอมมัน กลมกล่อม</p>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 4 -->
+            <div class="menu-card">
+                <img src="รูปภาพ/strawberry.jpg" alt="Strawberry Sorbet">
+                <div class="menu-info">
+                    <h3>🍓 Strawberry Sorbet</h3>
+                    <p>สตรอว์เบอร์รีสดชื่น เปรี้ยวอมหวาน ไขมัน 0%</p>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 5 -->
+            <div class="menu-card">
+                <img src="รูปภาพ/matcha.jpg" alt="Dark Matcha Green Tea">
+                <div class="menu-info">
+                    <h3>🌿 Dark Matcha Green Tea</h3>
+                    <p>มัจฉะเข้มข้น หวานน้อย สายมัจฉะต้องเลิฟ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
