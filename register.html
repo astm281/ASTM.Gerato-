@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สมัครสมาชิก | ASTM Gelato Bar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
+        header { background-color: #ffb6c1; color: #fff; text-align: center; padding: 25px 0; }
+        header h1 { margin: 0; font-size: 2.2em; }
+        nav { background-color: #e6738c; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px 0; }
+        nav a { color: white; text-decoration: none; padding: 10px 15px; margin: 2px 5px; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
+        nav a:hover, nav a.active-link { background-color: hsl(349, 89%, 75%); }
+        .container { max-width: 800px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        h2 { color: #ff889e; border-bottom: 2px solid #ffe5ec; padding-bottom: 8px; }
+        ul { line-height: 1.8; }
+  
+
+header h1 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: #e66d8d;
+    box-shadow: 0 3px 8px #d75d7b33;
+}
+
+
+main {
+    min-height: calc(100vh - 190px);
+    padding: 55px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 650px;
+    background: white;
+    padding: 38px 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(180, 112, 128, 0.12);
+    border: 1px solid #f9e8ec;
+}
+
+.register-card h2 {
+    color: #d94f76;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 22px;
+    color: #e87998;
+}
+
+.title-decoration span {
+    width: 65px;
+    height: 2px;
+    background: #f2a2b6;
+}
+
+.description {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #81727a;
+    margin-bottom: 28px;
+}
+
+/* ===== ช่องกรอกข้อมูล ===== */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #66545c;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ead8de;
+    border-radius: 9px;
+    background: #fffdfd;
+    font-family: inherit;
+    font-size: 14px;
+    color: #51454a;
+    outline: none;
+    transition: 0.25s;
+}
+
+.form-group input::placeholder {
+    color: #b9aab0;
+}
+
+.form-group input:focus {
+    border-color: #e87998;
+    box-shadow: 0 0 0 3px #fce5ec;
+    background: white;
+}
+
+/* ===== ปุ่ม ===== */
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.submit-btn {
+    margin-top: 7px;
+    color: white;
+    background: linear-gradient(90deg, #e45179, #ee7898);
+    box-shadow: 0 4px 10px #e4517925;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, #d93f6b, #e9678a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px #e4517935;
+}
+
+.reset-btn {
+    margin-top: 12px;
+    color: #d94f76;
+    background: #fce8ee;
+}
+
+.reset-btn:hover {
+    background: #f8d4df;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 12px;
+    color: #a08c95;
+    margin-top: 22px;
+}
+
+/* ===== รองรับมือถือ ===== */
+@media (max-width: 600px) {
+    header {
+        padding: 25px 12px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    nav {
+        gap: 3px;
+        padding: 10px 5px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 9px 10px;
+    }
+
+    main {
+        padding: 30px 14px;
+    }
+
+    .register-card {
+        padding: 28px 20px;
+        border-radius: 14px;
+    }
+
+    .register-card h2 {
+        font-size: 23px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ส่วนหัวเหมือนภาพตัวอย่างที่ 2 -->
+<header>
+    <h1>ASTM Gelato Bar</h1>
+    <p>เจลาโต้โฮมเมดพรีเมียม สไตล์อิตาลีแท้ๆ</p>
+</header>
+
+<nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="menu.html">เมนูไอศกรีม</a>
+        <a href="about.html">เกี่ยวกับเรา</a>
+        <a href="promo.html">โปรโมชั่น</a>
+        <a href="register.html">สมัครสมาชิก</a>
+        <a href="contact.html">ติดต่อเรา</a>
+    </nav>
+
+
+<main>
+    <section class="register-card">
+
+        <h2>สมัครสมาชิกเพื่อรับสิทธิพิเศษ</h2>
+
+        <div class="title-decoration">
+            <span></span>
+            ♥
+            <span></span>
+        </div>
+
+        <p class="description">
+            สมัครสมาชิกวันนี้ รับฟรีคูปองส่วนลด 50 บาท
+            สำหรับซื้อเจลาโต้สกู๊ปแรก<br>
+            พร้อมสะสมแต้มทุกการใช้จ่ายเพื่อแลกรับของรางวัลมากมาย!
+        </p>
+
+        <form id="registerForm">
+
+            <div class="form-group">
+                <label for="fullname">ชื่อ - นามสกุล</label>
+                <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="กรอกชื่อและนามสกุลของคุณ"
+                    autocomplete="name"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">อีเมล</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">เบอร์โทรศัพท์มือถือ</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="099-999-9999"
+                    autocomplete="tel"
+                    pattern="[0-9]{9,10}"
+                    title="กรุณากรอกเบอร์โทรศัพท์เป็นตัวเลข 9-10 หลัก"
+                    required>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                ♥ ยืนยันการสมัครสมาชิก
+            </button>
+
+            <button type="reset" class="reset-btn">
+                ↻ รีเซ็ต
+            </button>
+
+        </form>
+
+        <p class="footer-text">
+            ASTM Gelato Bar — ความสุขเล็ก ๆ ในทุกสกู๊ป
+        </p>
+
+    </section>
+</main>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit",
+    function(event) {
+        event.preventDefault();
+
+        if (this.checkValidity()) {
+            alert("ขอบคุณที่สมัครสมาชิก ASTM Gelato Bar ♥");
+            this.reset();
+        }
+    }
+);
+</script>
+
+</body>
+</html>
+```

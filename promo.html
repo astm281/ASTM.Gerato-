@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>โปรโมชั่น | ASTM Gelato Bar</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
+        header { background-color: #ffb6c1; color: #fff; text-align: center; padding: 25px 0; }
+        header h1 { margin: 0; font-size: 2.2em; }
+        nav { background-color: #e6738c; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px 0; }
+        nav a { color: white; text-decoration: none; padding: 10px 15px; margin: 2px 5px; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
+        nav a:hover, nav a.active-link { background-color: hsl(349, 89%, 75%); }
+        .container { max-width: 800px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        h2 { color: #ff889e; border-bottom: 2px solid #ffe5ec; padding-bottom: 8px; }
+        ul { line-height: 1.8; }
+        
+    font-family: Arial, sans-serif;
+    background: #faf7f8;
+    color: #444;
+    line-height: 1.7;
+}
+
+/* HEADER */
+header {
+    background: #ffb6c1;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    font-size: 34px;
+}
+
+header p {
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+nav {
+    background: #ff8fa3;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 8px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #df6e8d;
+}
+
+/* MAIN */
+.container {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    color: #ed7795;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* PROMOTION GRID */
+.promotion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.promo-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0 4px 14px #0000000d;
+    border: 1px solid #f5e5ea;
+    transition: 0.25s;
+}
+
+.promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #e99aaf35;
+}
+
+.promo-visual {
+    width: 40%;
+    min-height: 205px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+
+.promo-visual .emoji {
+    font-size: 65px;
+    line-height: 1.5;
+}
+
+.promo-visual p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pink { background: #fff0f4; }
+.yellow { background: #fff8df; }
+.purple { background: #f4edff; }
+.green { background: #eaf8ee; }
+.blue { background: #eaf5ff; }
+.orange { background: #fff0e3; }
+
+.promo-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.badge {
+    background: #ffe2e9;
+    color: #d94e76;
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.promo-content h2 {
+    font-size: 20px;
+    color: #e96f90;
+    margin-bottom: 7px;
+}
+
+.promo-content p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.promo-content .price {
+    color: #dc5079;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: 12px;
+}
+
+button {
+    border: none;
+    background: #f17e9d;
+    color: white;
+    padding: 9px 17px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #df5f82;
+}
+
+/* COUPON SECTION */
+.coupon-section {
+    margin-top: 35px;
+    padding: 25px;
+    background: #fff0f4;
+    border: 1px dashed #ed91aa;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.coupon-section h2 {
+    color: #e96f90;
+    margin-bottom: 8px;
+}
+
+.coupon-code {
+    display: inline-block;
+    margin: 12px 0;
+    padding: 10px 25px;
+    background: white;
+    border: 2px dashed #f08ca5;
+    border-radius: 8px;
+    color: #d94e76;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* TERMS */
+.terms {
+    margin-top: 25px;
+    padding: 18px;
+    background: white;
+    border-radius: 10px;
+    color: #777;
+    font-size: 13px;
+}
+
+.terms h3 {
+    color: #e96f90;
+    margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 45px;
+    padding: 25px 15px;
+    background: #f08ca5;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .promotion-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 27px;
+    }
+
+    .container {
+        padding: 0 12px;
+        margin-top: 22px;
+    }
+
+    .page-title {
+        font-size: 23px;
+    }
+
+    .promo-card {
+        flex-direction: column;
+    }
+
+    .promo-visual {
+        width: 100%;
+        min-height: 145px;
+    }
+
+    .promo-visual .emoji {
+        font-size: 50px;
+    }
+
+    .promo-content {
+        padding: 18px;
+    }
+
+    nav a {
+        padding: 7px 9px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>ASTM Gelato Bar</h1>
+    <p>เจลาโต้โฮมเมดพรีเมียม สไตล์อิตาลีแท้ๆ</p>
+</header>
+
+<nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="menu.html">เมนูไอศกรีม</a>
+    <a href="about.html">เกี่ยวกับเรา</a>
+    <a href="promotion.html" class="active">โปรโมชั่น</a>
+    <a href="register.html">สมัครสมาชิก</a>
+    <a href="contact.html">ติดต่อเรา</a>
+</nav>
+
+<main class="container">
+
+    <h1 class="page-title">🍨 โปรโมชั่นสุดพิเศษ</h1>
+    <p class="subtitle">
+        เติมเต็มความสุขด้วยเจลาโต้ถ้วยโปรด พร้อมข้อเสนอพิเศษ
+        ที่เราคัดสรรมาให้คุณ
+    </p>
+
+    <div class="promotion-grid">
+
+        <!-- โปรโมชั่น 1 -->
+        <article class="promo-card">
+            <div class="promo-visual pink">
+                <span class="emoji">🍨</span>
+                <p>BEST DEAL</p>
+            </div>
+            <div class="promo-content">
+                <span class="badge">ขายดี</span>
+                <h2>ซื้อ 2 สกู๊ป ฟรี 1 สกู๊ป</h2>
+                <p>
+                    อร่อยคุ้มกว่าเดิม เลือกเจลาโต้ได้ตามใจ
+                    รับเพิ่มฟรีอีก 1 สกู๊ป
+                </p>
+                <p class="price">พิเศษสำหรับทุกคน</p>
+                <button onclick="showDetail(
+                    'ซื้อ 2 สกู๊ป ฟรี 1 สกู๊ป',
+                    'เลือกรสชาติที่ชื่นชอบ 2 สกู๊ป และรับฟรีอีก 1 สกู๊ปตามเงื่อนไขของร้าน'
+                )">ดูรายละเอียด</button>
+            </div>
+        </article>
+
+        <!-- โปรโมชั่น 2 -->
+        <article class="promo-card">
+            <div class="promo-visual yellow">
+                <span class="emoji">⏰🍦</span>
+                <p>HAPPY HOUR</p>
+            </div>
+            <div class="promo-content">
+                <span class="badge">ช่วงเวลาพิเศษ</span>
+                <h2>Happy Hour ลด 20%</h2>
+                <p>
+                    เติมความหวานระหว่างวัน
+                    รับส่วนลดเมื่อซื้อเจลาโต้ในช่วงเวลาที่กำหนด
+                </p>
+                <p class="price">14:00 - 17:00 น.</p>
+                <button onclick="showDetail(
+                    'Happy Hour ลด 20%',
+                    'รับส่วนลด 20% ในช่วงเวลา 14:00 - 17:00 น. ตามเงื่อนไขของร้าน'
+                )">ดูรายละเอียด</button>
+            </div>
+        </article>
+
+        <!-- โปรโมชั่น 3 -->
+        <article class="promo-card">
+            <div class="promo-visual purple">
+                <span class="emoji">💗🍧</span>
+                <p>LOVE DEAL</p>
+            </div>
+            <div class="promo-content">
+                <span class="badge">สำหรับคู่รัก</span>
+                <h2>คู่รักอร่อยคู่กัน</h2>
+                <p>
+                    ชวนคนพิเศษมาแบ่งปันความสุข
+                    เลือกเจลาโต้ 2 ถ้วยในราคาพิเศษ
+                </p>
+                <p class="price">ความหวานคูณสอง</p>
+                <button onclick="showDetail(
+                    'คู่รักอร่อยคู่กัน',
+                    'เลือกเจลาโต้ 2 ถ้วยสำหรับคุณและคนพิเศษ ราคาและรสชาติเป็นไปตามรายการที่ร่วมโปรโมชั่น'
+                )">ดูรายละเอียด</button>
+            </div>
+        </article>
+
+        <!-- โปรโมชั่น 4 -->
+        <article class="promo-card">
+            <div class="promo-visual green">
+                <span class="emoji">🎂🎉</span>
+                <p>BIRTHDAY</p>
+            </div>
+            <div class="promo-content">
+                <span class="badge">เดือนเกิด</span>
+                <h2>Birthday Special</h2>
+                <p>
+                    ฉลองวันเกิดให้พิเศษกว่าเดิม
+                    รับส่วนลดหรือของขวัญจากทางร้าน
+                </p>
+                <p class="price">สำหรับสมาชิก</p>
+                <button onclick="showDetail(
+                    'Birthday Special',
+                    'สมาชิกสามารถสอบถามสิทธิพิเศษในเดือนเกิดได้ที่ร้าน กรุณาแสดงหลักฐานวันเกิดตามเงื่อนไข'
+                )">ดูรายละเอียด</button>
+            </div>
+        </article>
+
+        <!-- โปรโมชั่น 5 -->
+        <article class="promo-card">
+            <div class="promo-visual orange">
+                <span class="emoji">👨‍👩‍👧‍👦🍦</span>
+                <p>FRIENDS TIME</p>
+            </div>
+            <div class="promo-content">
+                <span class="badge">มาเป็นกลุ่ม</span>
+                <h2>แก๊งเพื่อนยิ่งเยอะ ยิ่งคุ้ม</h2>
+                <p>
+                    ชวนเพื่อนมาสนุกด้วยกัน
+                    ซื้อ 4 จ่าย 3 สำหรับเมนูที่ร่วมรายการ
+                </p>
+                <p class="price">แชร์ความอร่อยไปด้วยกัน</p>
+                <button onclick="showDetail(
+                    'แก๊งเพื่อนยิ่งเยอะ ยิ่งคุ้ม',
+                    'ซื้อเมนูที่ร่วมรายการ 4 หน่วย จ่าย 3 หน่วย โดยรายการที่ร่วมโปรโมชั่นขึ้นอยู่กับเงื่อนไขของร้าน'
+                )">ดูรายละเอียด</button>
+            </div>
+        </article>
+
+        <!-- โปรโมชั่น 6 -->
+        <article class="promo-card">
+            <div class="promo-visual blue">
+                <span class="emoji">⭐🎁</span>
+                <p>MEMBER REWARDS</p>
+            </div>
+            <div class="promo-content">
+                <span class="badge">สิทธิพิเศษสมาชิก</span>
+                <h2>สะสมแต้มแลกรางวัล</h2>
+                <p>
+                    ทุกการซื้อช่วยเพิ่มคะแนนสะสม
+                    เพื่อนำไปแลกรับเมนูหรือสิทธิพิเศษ
+                </p>
+                <p class="price">สะสมความสุขทุกครั้ง</p>
+                <button onclick="showDetail(
+                    'สะสมแต้มแลกรางวัล',
+                    'ตรวจสอบคะแนนสะสมและของรางวัลได้ที่หน้าสมาชิก อัตราการสะสมและการแลกเป็นไปตามเงื่อนไขของร้าน'
+                )">ดูรายละเอียด</button>
+            </div>
+        </article>
+
+        <!-- โปรโมชั่น 7 -->
+        <article class="promo-card">
+            <div class="promo-visual yellow">
+                <span class="emoji">🌈🍓</span>
+                <p>NEW FLAVOUR</p>
+            </div>
+            <div class="promo-content">
+                <span class="badge">เมนูใหม่</span>
+                <h2>ลองรสชาติใหม่ในราคาพิเศษ</h2>
+                <p>
+                    เปิดประสบการณ์กับเจลาโต้รสชาติใหม่
+                    ที่คัดสรรมาให้คุณได้ลอง
+                </p>
+                <p class="price">ชวนคุณค้นพบรสโปรด</p>
+                <button onclick="showDetail(
+                    'ลองรสชาติใหม่ในราคาพิเศษ',
+                    'สอบถามรสชาติใหม่และราคาพิเศษที่หน้าร้าน รายการอาจเปลี่ยนแปลงตามวัตถุดิบที่มี'
+                )">ดูรายละเอียด</button>
+            </div>
+        </article>
+
+        <!-- โปรโมชั่น 8 -->
+        <article class="promo-card">
+            <div class="promo-visual pink">
+                <span class="emoji">📱💝</span>
+                <p>WELCOME</p>
+            </div>
+            <div class="promo-content">
+                <span class="badge">สมาชิกใหม่</span>
+                <h2>ยินดีต้อนรับสมาชิกใหม่</h2>
+                <p>
+                    สมัครสมาชิกเพื่อรับข่าวสาร
+                    โปรโมชั่น และสิทธิพิเศษจากร้าน
+                </p>
+                <p class="price">เริ่มต้นความอร่อยไปด้วยกัน</p>
+                <button onclick="location.href='register.html'">
+                    สมัครสมาชิก
+                </button>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- คูปองส่วนลด -->
+    <section class="coupon-section">
+        <h2>🎁 คูปองพิเศษสำหรับคุณ</h2>
+        <p>
+            แสดงรหัสคูปองนี้ให้พนักงานตรวจสอบ
+            เมื่อใช้บริการตามเงื่อนไขที่ร้านกำหนด
+        </p>
+
+        <div class="coupon-code">A S T M</div>
+        <br>
+
+        <button onclick="copyCoupon()">คัดลอกรหัสคูปอง</button>
+        <p id="coupon-message" aria-live="polite"></p>
+    </section>
+
+    <!-- เงื่อนไขโปรโมชั่น -->
+    <section class="terms">
+        <h3>📌 เงื่อนไขการใช้โปรโมชั่น</h3>
+        <ul>
+            <li>โปรโมชั่นแต่ละรายการอาจมีระยะเวลาแตกต่างกัน</li>
+            <li>กรุณาตรวจสอบเมนูที่ร่วมรายการก่อนใช้สิทธิ์</li>
+            <li>บางโปรโมชั่นอาจไม่สามารถใช้ร่วมกับส่วนลดอื่นได้</li>
+            <li>ราคาส่วนลดและสิทธิพิเศษต้องได้รับการยืนยันจากทางร้าน</li>
+            <li>ทางร้านสามารถเปลี่ยนแปลงเงื่อนไขตามที่ประกาศแจ้งลูกค้า</li>
+        </ul>
+    </section>
+
+</main>
+
+<script>
+function showDetail(title, detail) {
+    alert(title + "\n\n" + detail);
+}
+
+function copyCoupon() {
+    const code = "ASTMLOVE";
+    const message = document.getElementById("coupon-message");
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code)
+            .then(() => {
+                message.textContent = "คัดลอกรหัส ASTMLOVE แล้ว!";
+            })
+            .catch(() => {
+                message.textContent =
+                    "กรุณาคัดลอกรหัสด้วยตนเอง: " + code;
+            });
+    } else {
+        message.textContent =
+            "รหัสคูปองของคุณคือ: " + code;
+    }
+}
+</script>
+
+</body>
+</html>
